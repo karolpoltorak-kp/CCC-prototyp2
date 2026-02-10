@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CCC Pricing Prototype v2</title>
+    
+    <!-- Tagi sprawiające, że link po dodaniu do ekranu głównego działa jak aplikacja -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="CCC Proto">
+    
+    <!-- Ikona na pulpit telefonu (uproszczony placeholder CCC) -->
+    <link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/CCC_logo.svg/1024px-CCC_logo.svg.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              ccc: '#E30613',
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* Blokada przewijania "gumowego" na iOS */
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Animacje dla Modal i BottomSheet */
+        @keyframes slideUp {
+          from { transform: translateY(100%); }
+          to { transform: translateY(0); }
+        }
+        .animate-slide-up {
+          animation: slideUp 0.3s ease-out;
+        }
+
+        /* Płynne przejście kolorów dla Dark Mode */
+        .dark-transition {
+          transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, shadow 0.3s ease;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
